@@ -20,7 +20,8 @@ export default {
       },
       fontFamily: {
         'Head': ['Courier Prime', 'monospace'],
-        'Arrow': ['Nanum Gothic Coding', 'monospace']
+        'Arrow': ['Nanum Gothic Coding', 'monospace'],
+        'Butto': ['Inner City', 'sans-serif']
       },
   },
   plugins: [],

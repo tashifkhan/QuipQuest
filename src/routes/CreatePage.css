@@ -1,0 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.display-text {
+    @apply text-white [font-family:"Courier_Prime"] text-4xl font-normal leading-[normal]
+}
