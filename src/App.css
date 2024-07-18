@@ -1,0 +1,18 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+.cointainer-input-box-mainpage {
+  @apply flex justify-center;
+}
+
+.input-box-mainpage {
+  @apply bg-light-green-01 w-[75%] h-[51px] rounded-[5px];
+}
+
+.arrow-buttons {
+  @apply text-white font-bold text-[96px] px-[13.6%] font-Arrow;
+}
