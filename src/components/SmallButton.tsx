@@ -7,6 +7,7 @@ function SmallButton(props) {
 				<button
 					className="w-3 h-5 shrink-0 text-[rgba(25,29,36,0.39)] font-Arrow text-xl font-normal leading-[normal] tracking-[3.2px] mx-1"
 					onClick={props.decrease}
+					name={props.name}
 				>
 					{"<"}
 				</button>
@@ -20,6 +21,7 @@ function SmallButton(props) {
 				<button
 					className="w-3 h-5 shrink-0 text-[rgba(25,29,36,0.39)] font-Arrow text-xl font-normal leading-[normal] tracking-[3.2px] mx-1"
 					onClick={props.increase}
+					name={props.name}
 				>
 					{">"}
 				</button>
