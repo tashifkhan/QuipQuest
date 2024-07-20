@@ -15,7 +15,7 @@
 }
 
 .arrow-buttons {
-  @apply text-white font-bold text-[96px] px-[13.6%] font-Arrow;
+  @apply text-white font-bold text-[96px] mx-[10.8%] font-Arrow;
 }
 
 .button-general {
