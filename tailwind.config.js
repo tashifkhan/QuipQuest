@@ -21,7 +21,8 @@ export default {
       fontFamily: {
         'Head': ['Courier Prime', 'monospace'],
         'Arrow': ['Nanum Gothic Coding', 'monospace'],
-        'Butto': ['Inner City', 'sans-serif']
+        'Butto': ['Inner City', 'sans-serif'],
+        'Time-diiiissssssss': ['Fira Code', 'monospace'],
       },
   },
   plugins: [],
