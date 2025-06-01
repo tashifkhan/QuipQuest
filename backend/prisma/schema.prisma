@@ -1,0 +1,70 @@
+generator client {
+  provider = "go run github.com/steebchen/prisma-client-go"
+  output   = "./db"
+  package  = "db"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id Int @id @default(autoincrement())
+
+  username     String @unique
+  email        String @unique
+  passwordHash String
+
+  isEmailVerified            Boolean   @default(false)
+  verificationToken          String?   @unique
+  verificationTokenExpiresAt DateTime?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  playedGames GamePlayer[]
+
+  hostedGames Game[] @relation("UserHostedGames")
+}
+
+model Game {
+  id String @id @default(cuid())
+
+  roomCode String     @unique
+  status   GameStatus @default(LIVE)
+
+  gameConfig Json @default("{}")
+
+  createdAt DateTime  @default(now())
+  startedAt DateTime?
+  endedAt   DateTime?
+
+  players GamePlayer[]
+
+  host   User @relation("UserHostedGames", fields: [hostId], references: [id])
+  hostId Int
+}
+
+enum GameStatus {
+  LIVE
+  FINISHED
+  CANCELLED // Game was started but aborted/cancelled
+}
+
+model GamePlayer {
+  id Int @id @default(autoincrement())
+
+  userId Int
+  gameId String
+
+  user User @relation(fields: [userId], references: [id])
+  game Game @relation(fields: [gameId], references: [id])
+
+  score  Int     @default(0)
+  isHost Boolean @default(false)
+
+  playerConfig Json @default("{}")
+
+  @@unique([userId, gameId])
+}
